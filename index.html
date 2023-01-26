@@ -18,27 +18,32 @@
         let current_slide = 1;
         let N = 3;
 
-        //initialize
+        const brandColor = "#f37a01"
+
         const boxNav = document.getElementById("boxNav")
+        const active_slide = document.getElementById("active_slide")
+
+        //initialize
         for(let n=1;n<=N;n++){
             const dot = document.createElement("div")
             dot.onclick = function() { changeSlide(n) }
             boxNav.appendChild(dot)
         }
+        boxNav.childNodes[current_slide - 1].style.backgroundColor = brandColor
 
-        const active = document.getElementById("active_slide")
-        function changeSlide(slide_number) {
-            current_slide = slide_number
-            active.src = `./images/wallpaper${current_slide}.jpg`
+        function changeSlide(to_slide_number) {
+            boxNav.childNodes[current_slide - 1].style.backgroundColor = 'gray'
+            boxNav.childNodes[to_slide_number - 1].style.backgroundColor = brandColor
+
+            active_slide.src = `./images/wallpaper${to_slide_number}.jpg`
+            current_slide = to_slide_number
         }
 
         function prevSlide(){
-            current_slide = (current_slide == 1 ? N : current_slide - 1)
-            changeSlide(current_slide)
+            changeSlide(current_slide == 1 ? N : current_slide - 1)
         }
         function nextSlide(){
-            current_slide = (current_slide == N ? 1 : current_slide + 1)
-            changeSlide(current_slide)
+            changeSlide(current_slide == N ? 1 : current_slide + 1)
         }
     </script>
 </body>
