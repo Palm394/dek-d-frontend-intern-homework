@@ -1,6 +1,9 @@
 let current_slide = 0;
-let N = 5;
 
+const picture_name = ["wallpaper1.jpg","wallpaper2.jpg","wallpaper3.jpg","wallpaper4.jpg","wallpaper5.jpg"]
+const N = picture_name.length
+
+// Like orange
 const primaryColor = "#f37a01"
 
 const boxNav = document.getElementById("boxNav")
@@ -9,7 +12,7 @@ const slide = document.getElementById("slide")
 //initialize
 for(let n=0;n<N;n++){
     const img = document.createElement("img")
-    img.src = `./images/wallpaper${n+1}.jpg`
+    img.src = './images/' + picture_name[n]
     img.style.display = "none"
     slide.appendChild(img)
 
