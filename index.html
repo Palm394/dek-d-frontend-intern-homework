@@ -10,7 +10,7 @@
 <body>
     <button class="trigger_button" id="prev" onclick="prevSlide()"> < </button>
     <button class="trigger_button" id="next" onclick="nextSlide()"> > </button>
-    <div id="active_slide"></div>
+    <div id="slide"></div>
     <div id="boxNav"></div>
     <script>
         let current_slide = 1;
@@ -19,28 +19,29 @@
         const brandColor = "#f37a01"
 
         const boxNav = document.getElementById("boxNav")
-        const active_slide = document.getElementById("active_slide")
+        const slide = document.getElementById("slide")
 
         //initialize
         for(let n=1;n<=N;n++){
             const img = document.createElement("img")
             img.src = `./images/wallpaper${n}.jpg`
             img.style.display = "none"
-            active_slide.appendChild(img)
+            slide.appendChild(img)
 
             const dot = document.createElement("div")
+            dot.className = "dot"
             dot.onclick = function() { changeSlide(n) }
             boxNav.appendChild(dot)
         }
-        active_slide.childNodes[0].style.display = 'inline'
+        slide.childNodes[0].style.display = 'inline'
         boxNav.childNodes[current_slide - 1].style.backgroundColor = brandColor
 
         function changeSlide(to_slide_number) {
             boxNav.childNodes[current_slide - 1].style.backgroundColor = 'gray'
             boxNav.childNodes[to_slide_number - 1].style.backgroundColor = brandColor
-
-            active_slide.childNodes[current_slide - 1].style.display = 'none'
-            active_slide.childNodes[to_slide_number - 1].style.display = 'inline'
+            
+            slide.childNodes[current_slide - 1].style.display = 'none'
+            slide.childNodes[to_slide_number - 1].style.display = 'inline'
             
             current_slide = to_slide_number
         }
