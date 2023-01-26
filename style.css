@@ -27,6 +27,8 @@ img {
 #boxNav {
     width: fit-content;
     margin: auto;
+    
+    margin-top: 2vh;
 }
 
 #boxNav div {
