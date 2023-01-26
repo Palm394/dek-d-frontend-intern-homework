@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#active_slide {
+    object-fit: cover;
+    height: 90vh;
+    width: 60vw;
+
+    margin-left: 20vw;
+}
+
+#boxNav {
+    width: fit-content;
+    margin: auto;
+}
+
+#boxNav > div {
+    height: 15px;
+    width: 15px;
+    margin: 15px 5px;
+    border-radius: 50%;
+    display: inline-block;
+
+    background-color: gray;
+    
+}
+
+#boxNav > div:hover {
+    background-color: black;
+}
+
+.trigger_button {
+    position: absolute;
+    top:40vh;
+
+    border: none;
+    border-radius: 20px;
+    opacity: .7;
+
+    width: 50px;
+    height: 50px;
+
+    font-size: 30px;
+}
+
+#prev {
+    left: 20vw;
+}
+
+#next {
+    right: 20vw;
+}

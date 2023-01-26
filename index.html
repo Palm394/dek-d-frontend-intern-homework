@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dek-d internship</title>
+</head>
+<body>
+    <div id="slide">
+        <button class="trigger_button" id="prev" onclick="prevSlide()"> < </button>
+        <button class="trigger_button" id="next" onclick="nextSlide()"> > </button>
+        <img id="active_slide" src="./images/wallpaper1.jpg" />
+    </div>
+    <div id="boxNav"></div>
+    <script>
+        let current_slide = 1;
+        let N = 3;
+
+        //initialize
+        const boxNav = document.getElementById("boxNav")
+        for(let n=1;n<=N;n++){
+            const dot = document.createElement("div")
+            dot.onclick = function() { changeSlide(n) }
+            boxNav.appendChild(dot)
+        }
+
+        const active = document.getElementById("active_slide")
+        function changeSlide(slide_number) {
+            current_slide = slide_number
+            active.src = `./images/wallpaper${current_slide}.jpg`
+        }
+
+        function prevSlide(){
+            current_slide = (current_slide == 1 ? N : current_slide - 1)
+            changeSlide(current_slide)
+        }
+        function nextSlide(){
+            current_slide = (current_slide == N ? 1 : current_slide + 1)
+            changeSlide(current_slide)
+        }
+    </script>
+</body>
+
+</html>
