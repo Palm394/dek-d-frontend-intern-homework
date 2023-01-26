@@ -11,6 +11,11 @@
     margin-left: 20vw;
 }
 
+img {
+    height: 100%;
+    width: 100%;
+}
+
 #boxNav {
     width: fit-content;
     margin: auto;
